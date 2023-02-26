@@ -21,6 +21,24 @@ class LoginViewController: UIViewController {
         label.isHidden = true
         return label
     }()
+    let mainLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.text = "BANKIT"
+        label.font = .systemFont(ofSize: 30, weight: .medium)
+        label.textAlignment = .center
+        return label
+    }()
+    
+    let subtitleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.text = "Your premuim source for all things banking"
+        label.textAlignment = .center
+        return label
+    }()
     
     var username: String? {
         return loginView.usernameTextField.text
@@ -44,9 +62,24 @@ extension LoginViewController {
     }
     
     private func layout(){
+        view.addSubview(mainLabel)
+        view.addSubview(subtitleLabel)
         view.addSubview(loginView)
         view.addSubview(signInButton)
         view.addSubview(errorMessageLabel)
+        
+        //Title
+        NSLayoutConstraint.activate([
+            subtitleLabel.topAnchor.constraint(equalToSystemSpacingBelow: mainLabel.bottomAnchor, multiplier: 3),
+            mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+        
+        //subTitle
+        NSLayoutConstraint.activate([
+            subtitleLabel.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
+            subtitleLabel.trailingAnchor.constraint(equalTo: loginView.trailingAnchor),
+            loginView.topAnchor.constraint(equalToSystemSpacingBelow: subtitleLabel.bottomAnchor, multiplier: 3)
+        ])
         
         //Login View
         NSLayoutConstraint.activate([
@@ -68,6 +101,7 @@ extension LoginViewController {
             errorMessageLabel.trailingAnchor.constraint(equalTo: loginView.trailingAnchor),
             errorMessageLabel.topAnchor.constraint(equalToSystemSpacingBelow: signInButton.bottomAnchor, multiplier: 2)
         ])
+    
     }
     
    
