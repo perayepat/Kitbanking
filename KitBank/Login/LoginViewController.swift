@@ -11,7 +11,6 @@ class LoginViewController: UIViewController {
         button.setTitle("Sign In", for: [])
         return button
     }()
-    
     let errorMessageLabel : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -19,8 +18,17 @@ class LoginViewController: UIViewController {
         label.numberOfLines = 0
         label.text = "Error failure"
         label.textAlignment = .center
+        label.isHidden = true
         return label
     }()
+    
+    var username: String? {
+        return loginView.usernameTextField.text
+    }
+    
+    var password: String? {
+        return loginView.passwordTextField.text
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,8 +67,6 @@ extension LoginViewController {
             errorMessageLabel.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
             errorMessageLabel.trailingAnchor.constraint(equalTo: loginView.trailingAnchor),
             errorMessageLabel.topAnchor.constraint(equalToSystemSpacingBelow: signInButton.bottomAnchor, multiplier: 2)
-            
-            
         ])
     }
     
@@ -70,7 +76,30 @@ extension LoginViewController {
 //MARK: - Actions
 extension LoginViewController{
     @objc func signInTapped(sender: UIButton){
+        login()
+    }
+    
+    private func login(){
+        guard let username = username, let password = password else {
+            assertionFailure("Username / Password should never be nil")
+            return
+        }
         
+        if username.isEmpty || password.isEmpty{
+            configureView(withMessage: "Username / passowrd cannot be blank ")
+            return
+        }
+        
+        if username == "Pat" && password == "Pat"{
+            signInButton.configuration?.showsActivityIndicator = true
+        } else {
+            configureView(withMessage: "incorrect Passoword / Username")
+        }
+    }
+    
+    private func configureView(withMessage message: String){
+        errorMessageLabel.isHidden = false
+        errorMessageLabel.text = message
     }
 }
 
