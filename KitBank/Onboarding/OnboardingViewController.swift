@@ -19,6 +19,7 @@ class OnboardingViewController: UIViewController {
         
     }
     
+    /// Init coder is how the storyboards get serialized into the view controller
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -27,6 +28,7 @@ class OnboardingViewController: UIViewController {
 
 extension OnboardingViewController{
     func style(){
+        view.backgroundColor = .systemBackground
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 20
