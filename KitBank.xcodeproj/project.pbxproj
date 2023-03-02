@@ -13,6 +13,7 @@
 		4322500529AB827C0054A0C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4322500329AB827C0054A0C5 /* LaunchScreen.storyboard */; };
 		4322500F29AB89C90054A0C5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4322500E29AB89C90054A0C5 /* LoginView.swift */; };
 		43AD61CF29B13586003696AC /* OnboardingContainerViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AD61CE29B13586003696AC /* OnboardingContainerViewContainer.swift */; };
+		43AD61D129B13B76003696AC /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AD61D029B13B76003696AC /* OnboardingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		4322500629AB827C0054A0C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4322500E29AB89C90054A0C5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		43AD61CE29B13586003696AC /* OnboardingContainerViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingContainerViewContainer.swift; path = ../../../../OnboardingContainerViewContainer.swift; sourceTree = "<group>"; };
+		43AD61D029B13B76003696AC /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				43AD61CE29B13586003696AC /* OnboardingContainerViewContainer.swift */,
+				43AD61D029B13B76003696AC /* OnboardingViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			files = (
 				4322500F29AB89C90054A0C5 /* LoginView.swift in Sources */,
 				43AD61CF29B13586003696AC /* OnboardingContainerViewContainer.swift in Sources */,
+				43AD61D129B13B76003696AC /* OnboardingViewController.swift in Sources */,
 				43224FFD29AB827A0054A0C5 /* LoginViewController.swift in Sources */,
 				43224FF929AB827A0054A0C5 /* AppDelegate.swift in Sources */,
 			);
