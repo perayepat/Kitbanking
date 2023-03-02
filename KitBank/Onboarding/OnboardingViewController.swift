@@ -11,6 +11,18 @@ class OnboardingViewController: UIViewController {
         style()
         layout()
     }
+
+    init(image imageName: String, title TitleText: String) {
+        super.init(nibName: nil, bundle: nil)
+        self.imageView.image = UIImage(named: imageName)
+        self.label.text = TitleText
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 }
 
 extension OnboardingViewController{
@@ -22,7 +34,7 @@ extension OnboardingViewController{
         //Image
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(named: "Currency")
+
         
         //Label
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -30,7 +42,7 @@ extension OnboardingViewController{
         label.font = UIFont.preferredFont(forTextStyle: .title3)
         label.adjustsFontForContentSizeCategory = true /// As the size of the font changes so will the font
         label.numberOfLines = 0
-        label.text = "Faster and easier to use, and has a new look that will make you feel like you're back in y2k"
+
     }
     
     func layout(){
