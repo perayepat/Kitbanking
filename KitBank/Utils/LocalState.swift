@@ -12,7 +12,7 @@ public class LocalState{
         }
         set(newValue){
             UserDefaults.standard.set(newValue, forKey: Keys.hasOnboarded.rawValue)
-            UserDefaults.standard.synchronize()
+            UserDefaults.standard.synchronize() // avoid multiple parts of the app trying to write to this 
         }
     }
 }

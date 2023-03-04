@@ -26,11 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: LoginViewControllerDelegate, OnboardingContainerViewControllerDelegate, LogoutDelegate{
     func didLogin() {
-        setRootViewController(hasOnboarded ? dummyViewController : onboardingViewController)
+        setRootViewController(LocalState.hasOnboarded ? dummyViewController : onboardingViewController)
     }
   
     func didFinishOnboarding() {
-        hasOnboarded = true
+        LocalState.hasOnboarded = true
         setRootViewController(dummyViewController)
     }
   
