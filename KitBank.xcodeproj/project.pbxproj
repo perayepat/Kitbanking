@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4314B53129B370B600BA3ED5 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4314B53029B370B600BA3ED5 /* DummyViewController.swift */; };
 		43224FF929AB827A0054A0C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43224FF829AB827A0054A0C5 /* AppDelegate.swift */; };
 		43224FFD29AB827A0054A0C5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43224FFC29AB827A0054A0C5 /* LoginViewController.swift */; };
 		4322500229AB827C0054A0C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4322500129AB827C0054A0C5 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4314B53029B370B600BA3ED5 /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
 		43224FF529AB827A0054A0C5 /* KitBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KitBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43224FF829AB827A0054A0C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43224FFC29AB827A0054A0C5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			children = (
 				43224FFC29AB827A0054A0C5 /* LoginViewController.swift */,
 				4322500E29AB89C90054A0C5 /* LoginView.swift */,
+				4314B53029B370B600BA3ED5 /* DummyViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4322500F29AB89C90054A0C5 /* LoginView.swift in Sources */,
+				4314B53129B370B600BA3ED5 /* DummyViewController.swift in Sources */,
 				43AD61CF29B13586003696AC /* OnboardingContainerViewContainer.swift in Sources */,
 				43AD61D129B13B76003696AC /* OnboardingViewController.swift in Sources */,
 				43224FFD29AB827A0054A0C5 /* LoginViewController.swift in Sources */,
