@@ -1,6 +1,8 @@
 
 import UIKit
 
+
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -10,6 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let loginViewController = LoginViewController()
     let onboardingViewController = OnboardingContainerViewController()
     let dummyViewController = DummyViewController()
+    let mainViewController = MainViewController()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -26,12 +29,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: LoginViewControllerDelegate, OnboardingContainerViewControllerDelegate, LogoutDelegate{
     func didLogin() {
-        setRootViewController(LocalState.hasOnboarded ? dummyViewController : onboardingViewController)
+        setRootViewController(LocalState.hasOnboarded ? mainViewController : onboardingViewController)
     }
   
     func didFinishOnboarding() {
         LocalState.hasOnboarded = true
-        setRootViewController(dummyViewController)
+        setRootViewController(mainViewController)
     }
   
     func didLogout() {
