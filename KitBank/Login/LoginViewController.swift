@@ -1,5 +1,8 @@
 import UIKit
-
+protocol LoginViewControllerDelegate: AnyObject{
+//    func didLogin(_ sender: LoginViewController) // pass data
+    func didLogin()
+}
 class LoginViewController: UIViewController {
     
     let loginView = LoginView()
