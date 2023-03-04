@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         dummyViewController.logoutDelegate = self
 //        window?.rootViewController = onboardingViewController
                 window?.rootViewController = loginViewController
+//        mainViewController.selectedIndex = 0 programmatically select the tabs
         return true
     }
 }
