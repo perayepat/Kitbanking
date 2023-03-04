@@ -21,9 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         loginViewController.delegate = self // send us any signals we get
         onboardingViewController.delegate = self
         dummyViewController.logoutDelegate = self
-//        window?.rootViewController = onboardingViewController
-                window?.rootViewController = loginViewController
-//        mainViewController.selectedIndex = 0 programmatically select the tabs
+//        window?.rootViewController = loginViewController
+        window?.rootViewController = AccountSummaryViewController()
+        //        mainViewController.selectedIndex = 0 programmatically select the tabs
         return true
     }
 }
@@ -32,12 +32,12 @@ extension AppDelegate: LoginViewControllerDelegate, OnboardingContainerViewContr
     func didLogin() {
         setRootViewController(LocalState.hasOnboarded ? mainViewController : onboardingViewController)
     }
-  
+    
     func didFinishOnboarding() {
         LocalState.hasOnboarded = true
         setRootViewController(mainViewController)
     }
-  
+    
     func didLogout() {
         setRootViewController(loginViewController)
     }
