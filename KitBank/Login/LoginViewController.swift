@@ -5,6 +5,8 @@ protocol LoginViewControllerDelegate: AnyObject{
 }
 class LoginViewController: UIViewController {
     
+    weak var delegate: LoginViewControllerDelegate?
+    
     let loginView = LoginView()
     let signInButton : UIButton = {
         let button = UIButton(type: .system)
@@ -129,6 +131,7 @@ extension LoginViewController{
         
         if username == "Pat" && password == "Pat"{
             signInButton.configuration?.showsActivityIndicator = true
+            self.delegate?.didLogin()
         } else {
             configureView(withMessage: "incorrect Passoword / Username")
         }
