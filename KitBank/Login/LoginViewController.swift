@@ -40,7 +40,6 @@ class LoginViewController: UIViewController {
         label.textAlignment = .center
         return label
     }()
-    
     let subtitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false

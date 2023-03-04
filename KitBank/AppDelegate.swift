@@ -5,6 +5,8 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    var hasOnboarded = false
+    
     let loginViewController = LoginViewController()
     let onboardingViewController = OnboardingContainerViewController()
     let dummyViewController = DummyViewController()
@@ -23,16 +25,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate: LoginViewControllerDelegate, OnboardingContainerViewControllerDelegate, LogoutDelegate{
-    func didLogout() {
-        setRootViewController(loginViewController)
+    func didLogin() {
+        setRootViewController(hasOnboarded ? dummyViewController : onboardingViewController)
     }
-    
+  
     func didFinishOnboarding() {
+        hasOnboarded = true
         setRootViewController(dummyViewController)
     }
-    
-    func didLogin() {
-        setRootViewController(onboardingViewController)
+  
+    func didLogout() {
+        setRootViewController(loginViewController)
     }
 }
 
