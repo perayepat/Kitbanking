@@ -26,7 +26,7 @@ extension AppDelegate: LoginViewControllerDelegate, OnboardingContainerViewContr
     }
     
     func didLogin() {
-//        print("foo -Did Login")
+        print("foo -Did Login")
         
     }
 }
