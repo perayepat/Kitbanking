@@ -3,6 +3,7 @@ import UIKit
 
 class DummyViewController: UIViewController {
     
+    weak var logoutDelegate: LogoutDelegate?
     let stackView = UIStackView()
     let label = UILabel()
     @objc let logoutButton = UIButton(type: .system)
@@ -41,7 +42,7 @@ extension DummyViewController{
     }
     
     @objc func logoutButtonTapped(sender: UIButton){
-        
+        logoutDelegate?.didLogout()
     }
 }
 
