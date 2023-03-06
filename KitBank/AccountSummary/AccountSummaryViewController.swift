@@ -33,7 +33,18 @@ extension AccountSummaryViewController:UITableViewDelegate, UITableViewDataSourc
         view.addSubview(tableView)
     }
     
+    private func setupHeaderTableView(){
+        let header = AccountSummaryHeaderView(frame: .zero)
+        
+        var size = header.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        size.width = UIScreen.main.bounds.width
+        header.frame.size = size
+        
+        tableView.tableHeaderView = header
+    }
+    
     private func layout(){
+        setupHeaderTableView()
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
