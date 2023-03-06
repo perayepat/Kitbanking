@@ -1,48 +1,69 @@
 import UIKit
 import SwiftUI
 
-class AccountSummaryViewController: UIViewController {
+class AccountSummaryViewController: UIViewController{
+
     
-    let stackView = UIStackView()
-    let label = UILabel()
+    
+    let games = [
+        "Pacman",
+        "Space Invaders",
+        "Space Patrol"
+    ]
+    
+    var tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        style()
+        setup()
         layout()
     }
 }
 
-extension AccountSummaryViewController{
-    func style(){
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.spacing = 20
-        
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Welcome"
-        label.font = UIFont.preferredFont(forTextStyle: .title1)
+extension AccountSummaryViewController:UITableViewDelegate, UITableViewDataSource {
+    private func setup(){
+       setupTableView()
     }
     
-    func layout(){
-        stackView.addArrangedSubview(label)
-        view.addSubview(stackView)
+    private func setupTableView(){
+        tableView.delegate = self
+        tableView.dataSource = self // We are going to supply the data for this table view
         
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(tableView)
+    }
+    
+    private func layout(){
         NSLayoutConstraint.activate([
-            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        games.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = games[indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
 }
+
+
 struct PreviewViewController_Previews: PreviewProvider {
     static var previews: some View {
         ViewControllerPreview {
             AccountSummaryViewController()
         }
     }
-    
-    
-    
 }
 
 struct ViewControllerPreview: UIViewControllerRepresentable{
