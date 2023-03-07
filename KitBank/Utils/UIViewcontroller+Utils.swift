@@ -11,6 +11,7 @@ extension UIViewController{
         let statusbarView = UIView(frame: frame)
         
         statusbarView.backgroundColor = appColor
+        
         view.addSubview(statusbarView)
     }
     func setStatusBar() {
