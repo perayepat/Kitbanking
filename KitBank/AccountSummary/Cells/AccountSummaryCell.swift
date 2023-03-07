@@ -24,17 +24,17 @@ class AccountSummaryCell: UITableViewCell{
 
 extension AccountSummaryCell{
     private func setup(){
-        contentView.addSubview(divider)
-        contentView.addSubview(typeLabel) // In a table view cell the content view is the important view
-        
+
         typeLabel.translatesAutoresizingMaskIntoConstraints = false
         typeLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
         typeLabel.adjustsFontForContentSizeCategory = true
         typeLabel.text = "Account type"
-        
-        
+                
         divider.translatesAutoresizingMaskIntoConstraints = false
-        divider.backgroundColor = .systemTeal
+        divider.backgroundColor = appColor
+        
+        contentView.addSubview(divider)
+        contentView.addSubview(typeLabel) // In a table view cell the content view is the important view
     }
     private func layout(){
         NSLayoutConstraint.activate([
@@ -45,7 +45,8 @@ extension AccountSummaryCell{
         NSLayoutConstraint.activate([
             divider.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
             divider.topAnchor.constraint(equalToSystemSpacingBelow: typeLabel.bottomAnchor, multiplier: 1),
-            divider.heightAnchor.constraint(equalToConstant: 100)
+            divider.widthAnchor.constraint(equalToConstant: 60),
+            divider.heightAnchor.constraint(equalToConstant: 4)
         ])
     }
 }
