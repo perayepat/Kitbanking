@@ -5,9 +5,11 @@ class AccountSummaryCell: UITableViewCell{
     let typeLabel = UILabel()
     let divider = UIView()
     let nameLabel = UILabel()
+    
     let balanceStackView = UIStackView()
     let balanceLabel = UILabel()
     let balanceAmountLabel = UILabel()
+    let chevronImageView = UIImageView()
     
     static let reuseIdentifier = String(describing: AccountSummaryCell.self)
     
@@ -48,6 +50,9 @@ extension AccountSummaryCell{
         contentView.addSubview(typeLabel) // In a table view cell the content view is the important view
         
         balanceStackView.translatesAutoresizingMaskIntoConstraints = false
+        balanceStackView.axis = .vertical
+        balanceStackView.alignment = .trailing
+        balanceStackView.spacing = 0
         
         balanceLabel.translatesAutoresizingMaskIntoConstraints = false
         balanceLabel.font = UIFont.preferredFont(forTextStyle: .body)
@@ -62,8 +67,11 @@ extension AccountSummaryCell{
         contentView.addSubview(balanceStackView)
         balanceStackView.addArrangedSubview(balanceLabel)
         balanceStackView.addArrangedSubview(balanceAmountLabel)
-        balanceStackView.axis = .vertical
-        balanceStackView.alignment = .trailing
+        
+        chevronImageView.translatesAutoresizingMaskIntoConstraints = false
+        chevronImageView.image = UIImage(systemName: "chevron.right")?.withTintColor(appColor)
+        contentView.addSubview(chevronImageView)
+      
     }
     private func layout(){
         NSLayoutConstraint.activate([
@@ -85,7 +93,12 @@ extension AccountSummaryCell{
         
         NSLayoutConstraint.activate([
             trailingAnchor.constraint(equalToSystemSpacingAfter: balanceStackView.trailingAnchor, multiplier: 5),
-            balanceStackView.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 4)
+            balanceStackView.topAnchor.constraint(equalToSystemSpacingBelow: divider.bottomAnchor, multiplier: 0)
+        ])
+        
+        NSLayoutConstraint.activate([
+            chevronImageView.topAnchor.constraint(equalToSystemSpacingBelow: divider.bottomAnchor, multiplier: 1),
+            trailingAnchor.constraint(equalToSystemSpacingAfter: chevronImageView.trailingAnchor, multiplier: 2)
         ])
     }
 }

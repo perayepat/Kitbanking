@@ -62,7 +62,7 @@ extension AccountSummaryViewController:UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: AccountSummaryCell.reuseIdentifier, for: indexPath) as? AccountSummaryCell else {return UITableViewCell()}
-        cell.accessoryType = .disclosureIndicator
+        
         return cell
     }
     
