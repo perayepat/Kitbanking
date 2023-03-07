@@ -17,6 +17,7 @@
 		4322500229AB827C0054A0C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4322500129AB827C0054A0C5 /* Assets.xcassets */; };
 		4322500529AB827C0054A0C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4322500329AB827C0054A0C5 /* LaunchScreen.storyboard */; };
 		4322500F29AB89C90054A0C5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4322500E29AB89C90054A0C5 /* LoginView.swift */; };
+		433B498529B708FA007B8F23 /* AccountSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B498429B708FA007B8F23 /* AccountSummaryCell.swift */; };
 		438CFBE629B67E9500C6D0CE /* AccountSummaryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438CFBE529B67E9500C6D0CE /* AccountSummaryHeaderView.swift */; };
 		438CFBE829B67ED200C6D0CE /* AccountSummaryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 438CFBE729B67ED200C6D0CE /* AccountSummaryHeaderView.xib */; };
 		43AD61CF29B13586003696AC /* OnboardingContainerViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AD61CE29B13586003696AC /* OnboardingContainerViewContainer.swift */; };
@@ -36,6 +37,7 @@
 		4322500429AB827C0054A0C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4322500629AB827C0054A0C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4322500E29AB89C90054A0C5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		433B498429B708FA007B8F23 /* AccountSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryCell.swift; sourceTree = "<group>"; };
 		438CFBE529B67E9500C6D0CE /* AccountSummaryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryHeaderView.swift; sourceTree = "<group>"; };
 		438CFBE729B67ED200C6D0CE /* AccountSummaryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSummaryHeaderView.xib; sourceTree = "<group>"; };
 		43AD61CE29B13586003696AC /* OnboardingContainerViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingContainerViewContainer.swift; path = ../../../../OnboardingContainerViewContainer.swift; sourceTree = "<group>"; };
@@ -66,8 +68,8 @@
 			isa = PBXGroup;
 			children = (
 				4314B53A29B39C3500BA3ED5 /* AccountSummaryViewController.swift */,
-				438CFBE529B67E9500C6D0CE /* AccountSummaryHeaderView.swift */,
-				438CFBE729B67ED200C6D0CE /* AccountSummaryHeaderView.xib */,
+				433B498229B708C6007B8F23 /* Header */,
+				433B498329B708DE007B8F23 /* Cells */,
 			);
 			path = AccountSummary;
 			sourceTree = "<group>";
@@ -120,6 +122,23 @@
 				4314B53029B370B600BA3ED5 /* DummyViewController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		433B498229B708C6007B8F23 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				438CFBE529B67E9500C6D0CE /* AccountSummaryHeaderView.swift */,
+				438CFBE729B67ED200C6D0CE /* AccountSummaryHeaderView.xib */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		433B498329B708DE007B8F23 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				433B498429B708FA007B8F23 /* AccountSummaryCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		43AD61CD29B13560003696AC /* Onboarding */ = {
@@ -208,6 +227,7 @@
 				438CFBE629B67E9500C6D0CE /* AccountSummaryHeaderView.swift in Sources */,
 				4314B53129B370B600BA3ED5 /* DummyViewController.swift in Sources */,
 				43AD61CF29B13586003696AC /* OnboardingContainerViewContainer.swift in Sources */,
+				433B498529B708FA007B8F23 /* AccountSummaryCell.swift in Sources */,
 				43AD61D129B13B76003696AC /* OnboardingViewController.swift in Sources */,
 				4314B53829B3901200BA3ED5 /* MainViewController.swift in Sources */,
 				4314B53B29B39C3500BA3ED5 /* AccountSummaryViewController.swift in Sources */,
