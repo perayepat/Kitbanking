@@ -1,8 +1,19 @@
 import UIKit
 
 class AccountSummaryCell: UITableViewCell{
+    
+    let typeLabel = UILabel()
+    let divider = UIView()
+    static let reuseIdentifier = String(describing: AccountSummaryCell.self)
+    
+    enum cellConfiguration: CGFloat{
+        case rowHeight = 100
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setup()
+        layout()
     }
     
     required init?(coder: NSCoder) {
@@ -13,9 +24,28 @@ class AccountSummaryCell: UITableViewCell{
 
 extension AccountSummaryCell{
     private func setup(){
+        contentView.addSubview(divider)
+        contentView.addSubview(typeLabel) // In a table view cell the content view is the important view
         
+        typeLabel.translatesAutoresizingMaskIntoConstraints = false
+        typeLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
+        typeLabel.adjustsFontForContentSizeCategory = true
+        typeLabel.text = "Account type"
+        
+        
+        divider.translatesAutoresizingMaskIntoConstraints = false
+        divider.backgroundColor = .systemTeal
     }
     private func layout(){
+        NSLayoutConstraint.activate([
+            typeLabel.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 2),
+            typeLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2)
+        ])
         
+        NSLayoutConstraint.activate([
+            divider.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
+            divider.topAnchor.constraint(equalToSystemSpacingBelow: typeLabel.bottomAnchor, multiplier: 1),
+            divider.heightAnchor.constraint(equalToConstant: 100)
+        ])
     }
 }

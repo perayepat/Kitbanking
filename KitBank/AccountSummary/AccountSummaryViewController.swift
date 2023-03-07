@@ -4,7 +4,6 @@ import SwiftUI
 class AccountSummaryViewController: UIViewController{
 
     
-    
     let games = [
         "Pacman",
         "Space Invaders",
@@ -28,6 +27,10 @@ extension AccountSummaryViewController:UITableViewDelegate, UITableViewDataSourc
     private func setupTableView(){
         tableView.delegate = self
         tableView.dataSource = self // We are going to supply the data for this table view
+        
+        tableView.register(AccountSummaryCell.self, forCellReuseIdentifier: AccountSummaryCell.reuseIdentifier)
+        tableView.rowHeight = AccountSummaryCell.cellConfiguration.rowHeight.rawValue
+        tableView.tableFooterView = UIView()
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
@@ -58,8 +61,7 @@ extension AccountSummaryViewController:UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = games[indexPath.row]
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: AccountSummaryCell.reuseIdentifier, for: indexPath) as? AccountSummaryCell else {return UITableViewCell()}
         return cell
     }
     
