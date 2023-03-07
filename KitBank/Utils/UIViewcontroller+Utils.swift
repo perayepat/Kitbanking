@@ -8,6 +8,7 @@ extension UIViewController{
     func setSystemBar(){
         let statusBarSize = UIApplication.shared.statusBarFrame.size
         let frame = CGRect(origin: .zero, size: statusBarSize)
+        
         let statusbarView = UIView(frame: frame)
         
         statusbarView.backgroundColor = appColor
