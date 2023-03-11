@@ -11,7 +11,7 @@ class AccountSummaryCell: UITableViewCell{
     struct ViewModel {
         let accountType: AccountType
         let accountName: String
-        let balance: Double
+        let balance: Decimal
     }
     
     let viewModel: ViewModel? = nil
