@@ -139,11 +139,14 @@ extension AccountSummaryCell{
         
         switch viewModel.accountType{
         case .Banking:
-            break
+            divider.backgroundColor = appColor
+            balanceLabel.text = "Current balance"
         case .CreditCard:
-            break
+            divider.backgroundColor = .systemOrange
+            balanceLabel.text = "Current balance"
         case .Investment:
-            break
+            divider.backgroundColor = .systemPink
+            balanceLabel.text = "Value"
         }
     }
 }
