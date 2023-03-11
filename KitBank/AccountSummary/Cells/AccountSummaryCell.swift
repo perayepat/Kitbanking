@@ -2,6 +2,20 @@ import UIKit
 
 class AccountSummaryCell: UITableViewCell{
     
+    enum AccountType: String {
+        case Banking
+        case CreditCard
+        case Investment
+    }
+    
+    struct ViewModel {
+        let accountType: AccountType
+        let accountName: String
+        let balance: Double
+    }
+    
+    let viewModel: ViewModel? = nil
+    
     let typeLabel = UILabel()
     let divider = UIView()
     let nameLabel = UILabel()
@@ -14,7 +28,7 @@ class AccountSummaryCell: UITableViewCell{
     static let reuseIdentifier = String(describing: AccountSummaryCell.self)
     
     enum cellConfiguration: CGFloat{
-        case rowHeight = 122
+        case rowHeight = 112
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -115,5 +129,21 @@ extension AccountSummaryCell{
         rootString.append(centString)
         
         return rootString
+    }
+}
+
+extension AccountSummaryCell{
+    func configure(with viewModel: ViewModel){
+        typeLabel.text = viewModel.accountType.rawValue
+        nameLabel.text = viewModel.accountName
+        
+        switch viewModel.accountType{
+        case .Banking:
+            break
+        case .CreditCard:
+            break
+        case .Investment:
+            break
+        }
     }
 }
