@@ -14,7 +14,7 @@ class AccountSummaryCell: UITableViewCell{
     static let reuseIdentifier = String(describing: AccountSummaryCell.self)
     
     enum cellConfiguration: CGFloat{
-        case rowHeight = 100
+        case rowHeight = 122
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -62,7 +62,7 @@ extension AccountSummaryCell{
         balanceAmountLabel.translatesAutoresizingMaskIntoConstraints = false
         balanceAmountLabel.font = UIFont.preferredFont(forTextStyle: .body)
         balanceAmountLabel.adjustsFontForContentSizeCategory = true
-        balanceAmountLabel.text = "$$$"
+        balanceAmountLabel.attributedText = makeFormattedBalance(dollars: "929,21", cents: "23")
         
         contentView.addSubview(balanceStackView)
         balanceStackView.addArrangedSubview(balanceLabel)
@@ -100,5 +100,20 @@ extension AccountSummaryCell{
             chevronImageView.topAnchor.constraint(equalToSystemSpacingBelow: divider.bottomAnchor, multiplier: 1),
             trailingAnchor.constraint(equalToSystemSpacingAfter: chevronImageView.trailingAnchor, multiplier: 2)
         ])
+    }
+    
+    private func makeFormattedBalance(dollars: String, cents: String) -> NSMutableAttributedString {
+        let dollarSignAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .callout), .baselineOffset: 8]
+        let dollarAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .title1)]
+        let centAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .footnote), .baselineOffset: 8]
+        
+        let rootString = NSMutableAttributedString(string: "$", attributes: dollarSignAttributes)
+        let dollarString = NSAttributedString(string: dollars, attributes: dollarAttributes)
+        let centString = NSAttributedString(string: cents, attributes: centAttributes)
+        
+        rootString.append(dollarString)
+        rootString.append(centString)
+        
+        return rootString
     }
 }
