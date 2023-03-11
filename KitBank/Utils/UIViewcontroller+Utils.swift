@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-let appColor: UIColor = .quaternarySystemFill
+let appColor: UIColor = .systemGreen
 
 extension UIViewController{
     

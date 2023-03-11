@@ -11,19 +11,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let loginViewController = LoginViewController()
     let onboardingViewController = OnboardingContainerViewController()
-    let dummyViewController = DummyViewController()
     let mainViewController = MainViewController()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
+        
         loginViewController.delegate = self // send us any signals we get
         onboardingViewController.delegate = self
-        dummyViewController.logoutDelegate = self
-//        window?.rootViewController = loginViewController
-        window?.rootViewController = AccountSummaryViewController()
-        //        mainViewController.selectedIndex = 0 programmatically select the tabs
+        
+        mainViewController.setStatusBar()
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().backgroundColor = appColor
+        window?.rootViewController = mainViewController
         return true
     }
 }

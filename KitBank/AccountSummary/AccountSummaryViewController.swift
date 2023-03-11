@@ -23,6 +23,7 @@ extension AccountSummaryViewController:UITableViewDelegate, UITableViewDataSourc
     private func setupTableView(){
         tableView.delegate = self
         tableView.dataSource = self // We are going to supply the data for this table view
+        tableView.backgroundColor = appColor
         
         tableView.register(AccountSummaryCell.self, forCellReuseIdentifier: AccountSummaryCell.reuseIdentifier)
         tableView.rowHeight = AccountSummaryCell.cellConfiguration.rowHeight.rawValue
